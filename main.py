@@ -16,7 +16,7 @@ dictionaryModel = {'modelParameters': ['cnt_term_12','active_time','sum_any_12',
 resultList=[] # пустой лист для формирования строки
 csvList=[] # пустой лист для формирования масива строк CSV
 
-# Метод формирования
+# Метод поиска и записи массива требуемых параметров
 def getBorrowerParameters(d):
     if not isinstance(d, (dict, list)): return d
     elif isinstance(d, list): return [v for v in (getBorrowerParameters(v) for v in d)]
