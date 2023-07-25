@@ -10,7 +10,7 @@ file_path_to = 'C:\TEMP\PIM_JSON\TO\countries.csv' # Путь к результ�
 # словарь параметров заявки
 dictionaryApp = {'loanApplication':['okpd','contractSum','contractPeriod'], 'beneficiary':['taxPayerNum'], 'creditParameters': ['creditTime','requestedSum']}
 # словарь параметров заемщика
-dictionaryLegal = {'borrower':['activityKindMdmId','customerMdmId','tin','businessRegDate']}  # словарь с
+dictionaryLegal = {'borrower':['activityKindMdmId','customerMdmId','tin','businessRegDate']}
 # словарь параметров модели
 dictionaryModel = {'modelParameters': ['cnt_term_12','active_time','sum_any_12','cnt_any_12']}
 resultList=[] # пустой лист для формирования строки
