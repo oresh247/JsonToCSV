@@ -28,7 +28,7 @@ def getBorrowerParameters(d):
                     resultList.append(d[k][i])
 
             # Просматриваем роли и находим ЮЛ с нужной ролью
-            if (k in {'roles'} and v!=None) and ROLE in v[0]:
+            if (k in {'roles'} and v!=None) and ROLE in v:
                 for i in dictionaryLegal[ROLE]:
                     resultList.append(d[i])
 
