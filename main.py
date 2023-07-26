@@ -5,12 +5,13 @@ import csv
 
 # глобальные переменные
 file_path_from = 'C:\TEMP\PIM_JSON\FROM\\' # Путь к корневому каталогу хранения исходных JSON файлов
-file_path_to = 'C:\TEMP\PIM_JSON\TO\countries.csv' # Путь к результирующим файлам
+file_path_to = 'C:\TEMP\PIM_JSON\TO\eDtoFields.csv' # Путь к результирующим файлам
 
 # словарь параметров заявки
 dictionaryApp = {'loanApplication':['okpd','contractSum','contractPeriod'], 'beneficiary':['taxPayerNum'], 'creditParameters': ['creditTime','requestedSum']}
 # словарь параметров заемщика
-dictionaryLegal = {'borrower':['activityKindMdmId','customerMdmId','tin','businessRegDate']}
+ROLE = 'borrower'
+dictionaryLegal = {ROLE:['activityKindMdmId','customerMdmId','tin','businessRegDate']}
 # словарь параметров модели
 dictionaryModel = {'modelParameters': ['cnt_term_12','active_time','sum_any_12','cnt_any_12']}
 resultList=[] # пустой лист для формирования строки
@@ -27,8 +28,8 @@ def getBorrowerParameters(d):
                     resultList.append(d[k][i])
 
             # Просматриваем роли и находим ЮЛ с нужной ролью
-            if (k in {'roles'} and v!=None) and v[0] in dictionaryLegal:
-                for i in dictionaryLegal[v[0]]:
+            if (k in {'roles'} and v!=None) and ROLE in v[0]:
+                for i in dictionaryLegal[ROLE]:
                     resultList.append(d[i])
 
                 for param in dictionaryModel['modelParameters']:
