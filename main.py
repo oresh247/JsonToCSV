@@ -36,7 +36,7 @@ def getBorrowerParameters(d):
                     paramValue = ""
                     for x in d['modelResult']:
                         for y in x['modelParameters']:
-                            if y['parameterName']==param:
+                            if y['parameterName'] == param:
                                 paramValue = y['parameterValue']
                     resultList.append(paramValue)
 
